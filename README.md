@@ -1,7 +1,7 @@
 
 # 📝 Interactive To-Do List
 
-![To-do-list](https://i.imgur.com/WtUxTv3.)
+![To-do-list](https://i.imgur.com/yoAU9QN.png)
 
 A beautiful and interactive To-Do List web app built with **HTML**, **Tailwind CSS**, and **Vanilla JavaScript**. This app allows users to manage tasks efficiently with live filters, theme toggle (light/dark mode), local storage persistence, and a responsive design.
 
