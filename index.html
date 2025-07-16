@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="todo-style.css">
+    <title>To-Do List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-3xl">
+        <div class="card-bg rounded-xl shadow-xl overflow-hidden border-theme border">
+            <!-- Header -->
+            <div class="header-gradient p-6 text-white relative">
+                <div class="absolute top-4 right-4">
+                    <button id="theme-toggle" class="theme-toggle p-2 rounded-full shadow">
+                        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-300" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+                        </svg>
+                        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-200 hidden" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                        </svg>
+                    </button>
+                </div>
+                <h1 class="text-2xl font-bold">To-Do List</h1>
+                <p class="text-indigo-100">Get things done, one task at a time</p>
+            </div>
+            
+            <!-- Add Task Form -->
+            <div class="p-6 border-b border-theme">
+                <form id="task-form" class="flex flex-col sm:flex-row gap-3">
+                    <input 
+                        type="text" 
+                        id="task-input" 
+                        placeholder="Add a new task..." 
+                        class="flex-grow px-4 py-2 border border-theme rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-transparent text-theme"
+                        required
+                    >
+                    <button 
+                        type="submit" 
+                        class="add-btn text-white px-6 py-2 rounded-lg transition duration-200 font-medium shadow hover:shadow-md"
+                    >
+                        Add Task
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Task Filters -->
+            <div class="p-4 border-b border-theme flex justify-center sm:justify-start">
+                <div class="flex space-x-2">
+                    <button id="filter-all" class="filter-btn active px-3 py-1 rounded">All</button>
+                    <button id="filter-active" class="filter-btn px-3 py-1 rounded">Active</button>
+                    <button id="filter-completed" class="filter-btn px-3 py-1 rounded">Completed</button>
+                </div>
+            </div>
+            
+            <!-- Task List -->
+            <div class="p-4">
+                <ul id="task-list" class="divide-y divide-theme">
+                    <li class="py-4 text-center text-slate-400" id="empty-state">
+                        No tasks yet. Add a task to get started!
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Task Stats -->
+            <div class="p-4 border-t border-theme text-sm text-slate-400 flex justify-between items-center">
+                <span id="task-count" class="text-theme">0 tasks</span>
+                <button id="clear-completed" class="text-secondary hover:text-green-600 hover:underline">
+                    Clear completed
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="todo-script.js"></script>
+</body>
+</html>
